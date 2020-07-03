@@ -1,5 +1,5 @@
 const API_KEY = "9de2d385245fc483f7722e5c668b366a";
-const API_BASE_URL = `http://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}`;
+const API_BASE_URL = `http://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&units=imperial`;
 
 // bind click event to generate button
 document.querySelector("#generate").addEventListener("click", generateEntry);
@@ -89,5 +89,5 @@ async function fetchLastEntry() {
 // generates new current date each time function is used
 function getCurrentDate() {
   const d = new Date();
-  return d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
+  return (d.getMonth()+1) + "." + d.getDate() + "." + d.getFullYear();
 }
